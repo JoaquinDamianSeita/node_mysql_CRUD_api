@@ -1,9 +1,10 @@
 const Sequelize = require("sequelize");
+require('dotenv').config();
 
 const operationModel = require("./models/operation");
 const userModel = require("./models/user");
 
-const sequelize = new Sequelize("tutorial_sequelize", "root", "Platense_008", {
+const sequelize = new Sequelize("tutorial_sequelize", "root", process.env.DB_PASSWORD, {
   host: "localhost",
   dialect: "mysql",
 });
